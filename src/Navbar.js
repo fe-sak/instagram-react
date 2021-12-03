@@ -1,4 +1,11 @@
 export default function Navbar() {
+  let icons = [
+    { name: "paper-plane-outline" },
+    { name: "compass-outline" },
+    { name: "heart-outline" },
+    { name: "person-outline" }
+  ]
+
   return (
     <div class="navbar">
       <div class="container">
@@ -21,10 +28,7 @@ export default function Navbar() {
         </div>
 
         <div class="icones">
-          <ion-icon name="paper-plane-outline"></ion-icon>
-          <ion-icon name="compass-outline"></ion-icon>
-          <ion-icon name="heart-outline"></ion-icon>
-          <ion-icon name="person-outline"></ion-icon>
+          {icons.map(({ name }) => <IonIcon name={name} />)}
         </div>
 
         <div class="icones-mobile">
@@ -33,4 +37,8 @@ export default function Navbar() {
       </div>
     </div>
   )
+}
+
+function IonIcon({ name }) {
+  return <ion-icon name={name}></ion-icon>
 }
